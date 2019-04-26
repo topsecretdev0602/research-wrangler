@@ -10,6 +10,7 @@ django = "*"
 djangorestframework = "*"
 django-allauth = "*"
 django-rest-auth = "*"
+django-taggit = "*"
 
 [requires]
 python_version = "3.6"
