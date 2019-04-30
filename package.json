@@ -1,0 +1,42 @@
+{
+  "name": "research-wrangler",
+  "version": "1.0.0",
+  "description": "Search and bookmark site specifically for research publications",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./research_wrangler/frontend/src/index.js --output ./research_wrangler/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./research_wrangler/frontend/src/index.js --output ./research_wrangler/frontend/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickcash/research-wrangler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrickcash/research-wrangler/issues"
+  },
+  "homepage": "https://github.com/patrickcash/research-wrangler#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.2.0",
+    "redux-form-validator": "^2.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}

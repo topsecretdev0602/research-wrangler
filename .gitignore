@@ -1,3 +1,7 @@
+# directories to ignore
+/node_modules
+/research_wrangler/frontend/static/frontend
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
