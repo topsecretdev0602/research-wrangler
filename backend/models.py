@@ -10,5 +10,5 @@ class Pubmark(models.Model):
     url = models.URLField('URL')
     keywords = TaggableManager()
     owner = models.ForeignKey(
-        CustomUser, related_name="projects", on_delete=models.CASCADE, null=True)
+        CustomUser, related_name="pubmarks", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

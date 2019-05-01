@@ -4,8 +4,8 @@
   "description": "Search and bookmark site specifically for research publications",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./research_wrangler/frontend/src/index.js --output ./research_wrangler/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./research_wrangler/frontend/src/index.js --output ./research_wrangler/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development --watch ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
