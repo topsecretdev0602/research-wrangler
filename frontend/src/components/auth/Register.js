@@ -16,7 +16,7 @@ class Register extends Component {
     return (
       <div className="row justify-content-center">
         <form className="col col-sm-4 card mt-5 p-2" onSubmit={handleSubmit}>
-          <h4 className="text-md-center">Register</h4>
+          <h4 className="text-md-center">Please create an account</h4>
           <hr />
 
           <fieldset className="form-group">

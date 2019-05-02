@@ -1,5 +1,7 @@
+export const GET_SEARCH_RESULTS = "GET_SEARCH_RESULTS";
+
 export const GET_PUBMARKS = "GET_PUBMARKS";
-export const ADD_PUBMAK = "ADD_PUBMARK";
+export const ADD_PUBMARK = "ADD_PUBMARK";
 export const DELETE_PUBMARK = "DELETE_PUBMARK";
 
 export const LOGIN = "LOGIN";

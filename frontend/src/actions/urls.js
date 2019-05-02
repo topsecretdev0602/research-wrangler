@@ -1,4 +1,4 @@
-const ROOT_URL = "http://localhost:8080/";
+const ROOT_URL = "http://localhost:8000/";
 
 export const AuthUrls = {
   LOGIN: `${ROOT_URL}rest-auth/login/`,
@@ -8,6 +8,6 @@ export const AuthUrls = {
 };
 
 export const PubmarksUrls = {
-  PUBMARKS_URL = `${ROOT_URL}api/pubmarks/`,
-  PUBMARKS_SEARCH = ``
+  PUBMARKS_URL: `${ROOT_URL}api/pubmarks/`,
+  PUBMARKS_SEARCH: ``
 };

@@ -11,6 +11,8 @@ import Header from "./layout/Header";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import PrivateRoute from "./auth/PrivateRoute";
+import Pubmarks from "./pubmarks/Pubmarks";
+import Search from "./search/Search";
 
 const token = localStorage.getItem("token");
 
@@ -26,7 +28,8 @@ class App extends Component {
           <Fragment>
             <Header />
             <Switch>
-              <PrivateRoute exact path="/" component={UserHome} />
+              <PrivateRoute exact path="/" component={Search} />
+              <PrivateRoute exact path="/pubmarks" component={Pubmarks} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
             </Switch>

@@ -5,7 +5,7 @@ import { GET_PUBMARKS, ADD_PUBMARK, DELETE_PUBMARK } from "./types";
 import { PubmarksUrls } from "./urls";
 
 // Get the pubmarks from the backend
-export const getPubmarkss = () => dispatch => {
+export const getPubmarks = () => dispatch => {
   const token = store.getState().auth.token;
   if (token) {
     axios

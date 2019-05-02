@@ -2,6 +2,8 @@
 /node_modules
 /research_wrangler/frontend/static/frontend
 
+db.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

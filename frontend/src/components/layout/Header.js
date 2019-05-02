@@ -15,9 +15,11 @@ export class Header extends Component {
 
     const authLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <span className="navbar-text text-light mr-3">
-          <strong>{user ? `Welcome ${user.username}` : ""}</strong>
-        </span>
+        <li className="nav-item">
+          <Link to="/pubmarks" className="nav-link text-light">
+            My Pubmarks
+          </Link>
+        </li>
         <li className="nav-item">
           <button
             onClick={this.props.logoutUser}
@@ -61,9 +63,9 @@ export class Header extends Component {
           className="collapse navbar-collapse container"
           id="navbarTogglerDemo01"
         >
-          <a className="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand">
             Research Wrangler
-          </a>
+          </Link>
           {isAuthenticated ? authLinks : guestLinks}
         </div>
       </nav>
