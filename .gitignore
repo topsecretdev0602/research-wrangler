@@ -1,6 +1,6 @@
 # directories to ignore
 /node_modules
-/research_wrangler/frontend/static/frontend
+/frontend/static/frontend
 
 db.sqlite3
 

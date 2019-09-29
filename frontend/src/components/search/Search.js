@@ -20,7 +20,7 @@ class Search extends Component {
   render() {
     return (
       <div className="container card card-body border-0 mb-4 p-4">
-        <h1 className="display-4 text-center">Search For Publications</h1>
+        <h1 className="display-5 text-center">Search For Publications</h1>
         <br />
         <form onSubmit={this.search.bind(this)}>
           <div className="form-group">
@@ -40,7 +40,7 @@ class Search extends Component {
             Search
           </button>
         </form>
-        <h4 className="display-4 text-center">Results:</h4>
+        <h4 className="display-5 text-center">Results:</h4>
       </div>
     );
   }
