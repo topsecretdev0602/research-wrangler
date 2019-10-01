@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import Proptypes from "prop-types";
 import { addPubmark } from "../../actions/pubmarks";
 import { getSearchResults } from "../../actions/search";
+import SearchInput from "./SearchInput";
+import SearchResults from "./SearchResults";
 
 class Search extends Component {
   static proptypes = {
@@ -11,36 +13,41 @@ class Search extends Component {
     addPubmark: Proptypes.func.isRequired
   };
 
-  search = e => {};
+  state = {
+    results: [],
+    query: "",
+    page: 0
+  };
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  getCurrentPageOfResults = () => {
+    // increment page on each call to
+    this.setState({ page: this.state.page + 1 });
+    this.props.getSearchResults(this.state.query, this.state.page + 1);
+  };
+
+  onInputChange = e => {
+    this.setState({ query: e.target.value });
+  };
+
+  onSearchSubmit = e => {
+    // reset page on new search
+    this.setState({ page: 0 });
+    this.getCurrentPageOfResults();
   };
 
   render() {
     return (
-      <div className="container card card-body border-0 mb-4 p-4">
-        <h1 className="display-5 text-center">Search For Publications</h1>
-        <br />
-        <form onSubmit={this.search.bind(this)}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Search..."
-              name="Search"
-              value=""
-              onChange={this.onChange}
-            />
-          </div>
-          <button
-            className="btn btn-primary btn-lg btn-block mb-5"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-        <h4 className="display-5 text-center">Results:</h4>
+      <div className="container">
+        <SearchInput
+          onInputChange={this.onInputChange}
+          onSearchSubmit={this.onSearchSubmit}
+        />
+        {this.props.results.length > 0 && (
+          <SearchResults
+            getCurrentPageOfResults={this.getCurrentPageOfResults}
+            results={this.props.results}
+          />
+        )}
       </div>
     );
   }

@@ -9,5 +9,5 @@ export const AuthUrls = {
 
 export const PubmarksUrls = {
   PUBMARKS_URL: `${ROOT_URL}api/pubmarks/`,
-  PUBMARKS_SEARCH: ``
+  PUBMARKS_SEARCH: `${ROOT_URL}api/search/`
 };
