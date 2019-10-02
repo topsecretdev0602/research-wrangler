@@ -45,7 +45,6 @@ class Search extends Component {
         {this.props.results.length > 0 && (
           <SearchResults
             getCurrentPageOfResults={this.getCurrentPageOfResults}
-            results={this.props.results}
           />
         )}
       </div>

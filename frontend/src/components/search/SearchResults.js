@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import SearchResult from "./SearchResult";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 /*
@@ -20,30 +22,17 @@ class SearchResults extends Component {
     return (
       <Fragment>
         <h4 className="display-5 text-center">Results:</h4>
-        <div className="results">
+        <div>
           {results.length > 0 && (
             <InfiniteScroll
               dataLength={results.length}
-              next={getCurrentPageOfResults()}
+              next={getCurrentPageOfResults}
               hasMore={true}
               loader={<h4>Loading...</h4>}
             >
               <div className="list-group">
                 {results.map(result => (
-                  <div key={result.doi} className="card" style="width: 18rem;">
-                    <img
-                      className="card-img-top"
-                      src={result.image.image_url}
-                      alt=""
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{result.title}</h5>
-                      <p className="card-text">{result.abstract}</p>
-                      <a href={result.oa_url} className="btn btn-primary">
-                        View Article
-                      </a>
-                    </div>
-                  </div>
+                  <SearchResult key={result.doi} result={result} />
                 ))}
               </div>
             </InfiniteScroll>
@@ -54,4 +43,8 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults;
+const mapStateToProps = state => ({
+  results: state.search.results
+});
+
+export default connect(mapStateToProps)(SearchResults);

@@ -4,7 +4,7 @@ from .api import PubmarkViewSet
 from .views import pub_search
 
 ROUTER = routers.DefaultRouter()
-ROUTER.register('api/pubmarks', PubmarkViewSet, 'pubmarks')
+ROUTER.register('api/pubmarks/', PubmarkViewSet, 'pubmarks')
 
 
 urlpatterns = [
