@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addPubmark } from "../../actions/pubmarks";
+import { addPubmark, deletePubmark } from "../../actions/pubmarks";
 
 class SearchResult extends Component {
   static propTypes = {
-    result: PropTypes.object
+    result: PropTypes.object,
+    addPubmark: PropTypes.func.isRequired,
+    deletePubmark: PropTypes.func.isRequired
   };
 
-  onPubmarkClick = result => {
+  addPubmark = result => {
     const title = result.title == undefined ? " " : result.title;
     const abstract =
       result.abstract.text == undefined ? " " : result.abstract.text;
     const authors =
       result.author_lastnames == undefined
         ? " "
-        : result.author_lastnames.join(",");
+        : result.author_lastnames.join(", ");
+    const doi = result.doi;
     const url = result.oa_url == undefined ? " " : result.oa_url;
     const keywords = result.topics == undefined ? " " : result.topics.join(",");
     const pubmark = {
       title: title,
       abstract: abstract,
       authors: authors,
+      doi: doi,
       url: url,
       keywords: keywords
     };
@@ -29,39 +33,50 @@ class SearchResult extends Component {
     this.props.addPubmark(pubmark);
   };
 
+  deletePubmarks = result => {
+    const pubmark = this.props.pubmarks.find(
+      pubmark => pubmark.doi === result.doi
+    );
+    this.props.deletePubmark(pubmark.id);
+  };
+
   render() {
-    const { result } = this.props;
-    const imageStyle = {
-      width: "100px",
-      height: "100px"
-    };
+    const { result, pubmarks } = this.props;
+    const havePubmark = pubmarks.some(pubmark => pubmark.doi === result.doi);
     return (
-      <div className="container">
-        <img
-          className="img-thumbnail float-left"
-          style={imageStyle}
-          src={result.image.image_url}
-          alt=""
-        />
-        <a
-          onClick={() => this.onPubmarkClick(result)}
-          className="float-right btn btn-primary"
-        >
-          Add Pubmark
-        </a>
-        <div>
-          <h5>{result.title}</h5>
-          <p>{"p" + result.abstract.text + "p"}</p>
-          <a href={result.oa_url} className="btn btn-primary">
-            View Article
+      <div className="container mb-4">
+        {havePubmark ? (
+          <a
+            onClick={() => this.deletePubmark(result)}
+            className="float-right btn btn-danger"
+          >
+            Delete Pubmark
           </a>
+        ) : (
+          <a
+            onClick={() => this.addPubmark(result)}
+            className="float-right btn btn-primary"
+          >
+            Add Pubmark
+          </a>
+        )}
+        <div>
+          <h5>
+            <a href={result.oa_url}>{result.title}</a>
+          </h5>
+          <p>Authors: {result.author_lastnames.join(",")}</p>
+          <p>Abstract: {result.abstract.text}</p>
         </div>
       </div>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  pubmarks: state.pubmarks.pubmarks
+});
+
 export default connect(
-  null,
-  { addPubmark }
+  mapStateToProps,
+  { addPubmark, deletePubmark }
 )(SearchResult);

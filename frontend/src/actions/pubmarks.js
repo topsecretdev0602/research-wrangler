@@ -52,7 +52,7 @@ export const addPubmark = pubmark => dispatch => {
   }
 };
 
-// Delete the pubmark with passed in id
+// Delete the pubmark with passed in doi
 export const deletePubmark = id => dispatch => {
   const token = store.getState().auth.token;
   if (token) {

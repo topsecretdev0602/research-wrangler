@@ -16,7 +16,7 @@ export class Header extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <li className="nav-item">
-          <Link to="/pubmarks" className="nav-link text-light">
+          <Link to="/pubmarks" className="nav-link text-light mr-3">
             My Pubmarks
           </Link>
         </li>
@@ -34,7 +34,7 @@ export class Header extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <li className="nav-item">
-          <Link to="/register" className="nav-link text-light">
+          <Link to="/register" className="nav-link text-light mr-3">
             Sign Up
           </Link>
         </li>
@@ -47,7 +47,7 @@ export class Header extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-5">
         <button
           className="navbar-toggler"
           type="button"
