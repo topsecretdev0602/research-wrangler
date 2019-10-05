@@ -18,7 +18,7 @@ export class Pubmarks extends Component {
     return (
       <Fragment>
         <div className="container">
-          <h2 className="my-5">Pubmarks</h2>
+          <h2 className="mb-5">Pubmarks</h2>
           {this.props.pubmarks.map(pubmark => (
             <div key={pubmark.id} className="container mb-4">
               <a
