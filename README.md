@@ -8,15 +8,15 @@ Search and bookmark site specifically for research publications
 
 #### Install dependencies
 
-'''bash
+```bash
 pipenv install
-'''
+```
 
 #### Start virtual environment
 
-'''bash
+```bash
 pipenv shell
-'''
+```
 
 #### Setup database
 
@@ -24,20 +24,20 @@ No changes needed to use SQLite, if using another database add database settings
 
 #### Run server
 
-'''bash
+```bash
 python manage.py runserver
-'''
+```
 
 ### Frontend React setup
 
 #### install dependencies
 
-'''bash
+```bash
 npm i
-'''
+```
 
 ### Start frontend
 
-'''bash
+```bash
 npm run dev
-'''
+```
