@@ -25,11 +25,11 @@
         },
         "charset-normalizer": {
             "hashes": [
-                "sha256:88fce3fa5b1a84fdcb3f603d889f723d1dd89b26059d0123ca435570e848d5e1",
-                "sha256:c46c3ace2d744cfbdebceaa3c19ae691f53ae621b39fd7570f59d14fb7f2fd12"
+                "sha256:0c8911edd15d19223366a194a513099a302055a962bca2cec0f54b8b63175d8b",
+                "sha256:f23667ebe1084be45f6ae0538e4a5a865206544097e4e8bbcacf42cd02a348f3"
             ],
             "markers": "python_version >= '3'",
-            "version": "==2.0.3"
+            "version": "==2.0.4"
         },
         "defusedxml": {
             "hashes": [
@@ -141,11 +141,11 @@
         },
         "sqlparse": {
             "hashes": [
-                "sha256:017cde379adbd6a1f15a61873f43e8274179378e95ef3fede90b5aa64d304ed0",
-                "sha256:0f91fd2e829c44362cbcfab3e9ae12e22badaa8a29ad5ff599f9ec109f0454e8"
+                "sha256:0c00730c74263a94e5a9919ade150dfc3b19c574389985446148402998287dae",
+                "sha256:48719e356bb8b42991bdbb1e8b83223757b93789c00910a616a071910ca4a64d"
             ],
-            "markers": "python_version >= '3.5'",
-            "version": "==0.4.1"
+            "index": "pypi",
+            "version": "==0.4.2"
         },
         "urllib3": {
             "hashes": [
